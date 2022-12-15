@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <base-notification />
+    <base-notification v-for="notif in notifications" :key="notif.variant" :variant="notif.variant" :title="notif.title"></base-notification>
   </div>
 </template>
 
@@ -19,22 +19,22 @@ export default {
        */
       notifications: [
         {
-          title: 'Modal Window',
+          title: 'Danger Window',
           content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor",
           variant: 'danger',
         },
         {
-          title: 'Modal Window',
+          title: 'Success Window',
           content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor",
           variant: 'success',
         },
         {
-          title: 'Modal Window',
+          title: 'Warning Window',
           content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor",
           variant: 'warning',
         },
         {
-          title: 'Modal Window',
+          title: 'Info Window',
           content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor",
           variant: 'info',
         }
