@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <base-notification v-for="notif in notifications" :key="notif.variant" :variant="notif.variant" :title="notif.title"></base-notification>
+    <base-notification  v-for="(notif, index) in notifications" :key="notif.variant" :variant="notif.variant" :title="notif.title" @close-click="removeNotification(index)"></base-notification>
   </div>
 </template>
 
@@ -41,7 +41,14 @@ export default {
       ],
     }
   },
+  methods: {
+    removeNotification(index){
+      this.notifications.splice(index, 1)
+    }
+  }
 }
+
+
 </script>
 <style lang="scss" scoped>
 .page {

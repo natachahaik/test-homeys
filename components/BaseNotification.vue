@@ -15,7 +15,7 @@
             <img :src="srcComputed" alt="icon" class="success-icon"/>
             <h1>{{ title }}</h1> 
         </span> 
-        <div class="close">
+        <div class="close" @click="$emit('close-click')">
             <img :src="close" alt="icône close" class="close-icon"/>
         </div>
     </div>
